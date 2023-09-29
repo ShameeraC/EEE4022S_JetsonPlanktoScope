@@ -69,7 +69,10 @@ def show_camera():
                     break
                 # Capture image on 'j'
                 if keyCode == ord('j'):
-                    name = "PSCapture " +str(datetime.datetime.now()) + ".png"
+                    DT = str(datetime.datetime.now()).split()
+                    date = DT[0]
+                    time = ((DT[1].split("."))[0]).replace(":", ".")
+                    name = "PSCapture_" + date + "_" + time + ".png"
                     cv2.imwrite(name, frame)
         finally:
             video_capture.release()
