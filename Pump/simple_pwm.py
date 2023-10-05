@@ -44,11 +44,11 @@ def main():
     # Board pin-numbering scheme
     GPIO.setmode(GPIO.BOARD)
     # set pin as an output pin with optional initial state of HIGH
-    GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
-    p = GPIO.PWM(output_pin, 50)
+    GPIO.setup(32, GPIO.OUT, initial=GPIO.HIGH)
+    p = GPIO.PWM(32, 50)
     val = 25
     incr = 5
-    p.start(val)
+    p.start(50)
 
     print("PWM running. Press CTRL+C to exit.")
     try:
