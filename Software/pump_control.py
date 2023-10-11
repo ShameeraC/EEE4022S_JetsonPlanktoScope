@@ -35,11 +35,8 @@ def reverse():
     GPIO.output(in1_pin, GPIO.LOW)
     GPIO.output(in2_pin, GPIO.HIGH)
 
-def main():
+def pumpControl():
     conf()
-    # forward()
-    # time.sleep(15)
-    # stop()
     while True:
         keyCode = cv2.waitKey(10) & 0xFF
         if keyboard.is_pressed('q') or keyCode == 27:
@@ -58,9 +55,6 @@ def main():
         elif keyboard.is_pressed('x'):
             print("disabled...")
             stop()
-
-conf()
-main()
 
 
 
