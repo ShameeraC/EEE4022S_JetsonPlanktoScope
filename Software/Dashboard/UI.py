@@ -8,12 +8,19 @@ import sys
 sys.path.insert(0, '/home/shameera/Desktop/EEE4022S_JetsonPlanktoScope/Software/Control')
 import simple_camera as cam
 import pump_control as pump
+import lighting as light
 
 def Camera():
     cam.show_camera()
 
 def Pump():
     pump.pumpControl()
+
+def LightOn():
+    light.light_on()
+
+def LightOff():
+    light.light_off()
 
 # function to open a new window on a button click
 # based on https://www.geeksforgeeks.org/tkinter-application-to-switch-between-different-page-frames/
@@ -33,9 +40,15 @@ def openOpticsWindow():
     # A Label widget to show in toplevel
     Label(newWindow, text ="Camera Controls:\n1. ESC or q to quit\n2. j to capture image").pack()
 
-    # button to start camera
+    # buttons to start camera
     camButton = Button(newWindow, text="Start Camera", background='#3A7BB5', foreground='white', command= Camera)
     camButton.pack()
+
+    # button to turn light on and off 
+    lightOn = Button(newWindow, text="Start Light", background='#3A7BB5', foreground='white', command= LightOn)
+    lightOn.pack()
+    lightOff = Button(newWindow, text="Stop Light", background='#3A7BB5', foreground='white', command= LightOff)
+    lightOff.pack()
 
 # function to open a new window on a button click
 # based on https://www.geeksforgeeks.org/tkinter-application-to-switch-between-different-page-frames/
@@ -55,7 +68,7 @@ def openFluidicsWindow():
     # A Label widget to show in toplevel
     Label(newWindow, text ="Fluidic Acquisition:\n1. q to quit\n2. f to pump forward for 15 seconds\n3. r to pump backwards for 15 seconds\n4. x to stop pump").pack()
 
-    # button to start camera
+    # button to start pump
     pumpButton = Button(newWindow, text="Start Pump", background='#3A7BB5', foreground='white', command= Pump)
     pumpButton.pack()
 

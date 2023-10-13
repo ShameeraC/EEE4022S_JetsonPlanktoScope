@@ -44,14 +44,18 @@ def pumpControl():
             break
         elif keyboard.is_pressed('f'):
             print("forward...")
+            start()
             forward()
             time.sleep(15)
             stop()
+            print("Complete.")
         elif keyboard.is_pressed('r'):
             print("reverse...")
+            start()
             reverse()
             time.sleep(15)
             stop()
+            print("Complete.")
         elif keyboard.is_pressed('x'):
             print("disabled...")
             stop()
