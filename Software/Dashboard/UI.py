@@ -10,18 +10,17 @@ import simple_camera as cam
 import pump_control as pump
 import lighting as light
 
+isOn = True
+
 def Camera():
     cam.show_camera()
 
 def Pump():
     pump.pumpControl()
 
-def LightOn():
-    light.light_on()
-
-def LightOff():
-    light.light_off()
-
+def Light():
+    light.toggle()
+    
 # function to open a new window on a button click
 # based on https://www.geeksforgeeks.org/tkinter-application-to-switch-between-different-page-frames/
 def openOpticsWindow():
@@ -45,10 +44,8 @@ def openOpticsWindow():
     camButton.pack()
 
     # button to turn light on and off 
-    lightOn = Button(newWindow, text="Start Light", background='#3A7BB5', foreground='white', command= LightOn)
+    lightOn = Button(newWindow, text="Toggle Light", background='#3A7BB5', foreground='white', command= Light)
     lightOn.pack()
-    lightOff = Button(newWindow, text="Stop Light", background='#3A7BB5', foreground='white', command= LightOff)
-    lightOff.pack()
 
 # function to open a new window on a button click
 # based on https://www.geeksforgeeks.org/tkinter-application-to-switch-between-different-page-frames/

@@ -8,6 +8,8 @@ import keyboard
 #define pins
 enable_pin = 12
 
+isOn = True
+
 def conf():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(enable_pin, GPIO.OUT, initial=GPIO.LOW)
@@ -19,3 +21,13 @@ def light_on():
 def light_off():
     conf()
     GPIO.output(enable_pin, GPIO.LOW)
+
+def toggle():
+    global isOn 
+
+    if isOn:
+        light_on()
+        isOn = False
+    else:
+        light_off()
+        isOn = True
