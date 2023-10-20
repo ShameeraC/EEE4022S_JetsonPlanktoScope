@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 import math
 import UIFunctions as UIF
 import sys
-sys.path.insert(0, '/home/shameera/Desktop/EEE4022S_JetsonPlanktoScope/Software/Control')
+# sys.path.insert(0, '/home/shameera/Desktop/EEE4022S_JetsonPlanktoScope/Software/Control')
 import simple_camera as cam
 import pump_control as pump
 import lighting as light
