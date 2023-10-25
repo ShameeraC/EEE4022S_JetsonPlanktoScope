@@ -40,6 +40,7 @@ def pumpControl():
     while True:
         keyCode = cv2.waitKey(10) & 0xFF
         if keyboard.is_pressed('q') or keyCode == 27:
+            stop()
             print("closing...")
             break
         elif keyboard.is_pressed('f'):
